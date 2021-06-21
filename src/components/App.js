@@ -12,12 +12,12 @@ function App() {
         {/* Nuestro elemento principal solamente debe de tener un solo hijo */}
         <Layout>
           <Switch>
-            {/* Similar al Switch de programacion, hace que solo eligamos una ruta */}
+            {/* Similar al Switch de programacion, hace que solo eligamos una ruta, en las rutas importa el orden */}
             <Route exact path="/badges" component={Badges} />{" "}
             {/* Seran nuestros directorios, tiene exact path porque de otra manera el switch se confundira y abrira otra ruta ya que badges y badges/new coinciden al inicio */}
             <Route exact path="/badges/new" component={BadgeNew} />
+            <Route exact path="/badges/:badgeId/edit" component={BadgeEdit} /> {/* El badgeId es una variable, la cual si estara definida en nuestra URL pero sera variable, sera un valor generico, mas adelante la modificaremos*/}
             <Route component={NotFound}/>
-            <Route exact path="/badges/:badgeId/edit" component={BadgeEdit} /> {/* El badgeId es una variable, la cual si estara definida en nuestra URL pero sera variable, sera un valor generico */}
           </Switch>
       </Layout>
     </BrowserRouter>
