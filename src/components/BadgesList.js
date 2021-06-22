@@ -21,28 +21,30 @@ class BadgesList extends React.Component {
         {this.props.badges.map((badge) => {
           //La funcion map retornara un li por cada valor
           return (
-            <li key={badge.id}>
-              {/* id porque asi es unico, si ponemos por ejemplo first name corremos el riesgo de que dos elementos se llamen iguales */}
-              <Gravatar email={badge.email} />
-              <div>
-                <p>
-                  <b>
-                    {badge.firstName} {badge.lastName}
-                  </b>
-                </p>
-                <p>
-                  <span>
-                    <img
-                      src="https://seeklogo.com/images/T/twitter-logo-A84FE9258E-seeklogo.com.png"
-                      alt="Twitter Icon"
-                      width="20px"
-                    />
-                  </span>
-                  @{badge.twitter}
-                </p>
-                <p>{badge.jobTitle}</p>
-              </div>
-            </li>
+            <Link  key={badge.id} className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}> {/* La clase que le ponemos es de bootstrap y es para que no se vea azul, caracteristica de un hipervinculo */}
+              <li> {/* Todos los componentes React se les asigna un ID */}
+                {/* id porque asi es unico, si ponemos por ejemplo first name corremos el riesgo de que dos elementos se llamen iguales */}
+                <Gravatar email={badge.email} />
+                <div>
+                  <p>
+                    <b>
+                      {badge.firstName} {badge.lastName}
+                    </b>
+                  </p>
+                  <p>
+                    <span>
+                      <img
+                        src="https://seeklogo.com/images/T/twitter-logo-A84FE9258E-seeklogo.com.png"
+                        alt="Twitter Icon"
+                        width="20px"
+                      />
+                    </span>
+                    @{badge.twitter}
+                  </p>
+                  <p>{badge.jobTitle}</p>
+                </div>
+              </li>
+            </Link>
           );
         })}
       </ul>

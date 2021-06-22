@@ -17,6 +17,8 @@ class Badges extends React.Component {
 
   componentDidMount () {
     this.fetchData()
+
+    setInterval(this.fetchData, 5000) /* define un intervalo donde se ejecutarael primer argumento */
   }
 
   fetchData = async () => {

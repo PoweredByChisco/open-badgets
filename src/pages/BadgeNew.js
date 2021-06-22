@@ -19,6 +19,8 @@ class BadgeNew extends React.Component {
     },
   }; //Manejo de estado
 
+  
+
   handleChange = (e) => {
     this.setState({
       form: {
@@ -44,11 +46,14 @@ class BadgeNew extends React.Component {
     }
   };
 
+
+  
   render() {
     if (this.state.loading) {
       return <PageLoading />;
     }
-
+    
+    
     return (
       <React.Fragment>
         <div className="BadgeNew__hero">
@@ -58,7 +63,7 @@ class BadgeNew extends React.Component {
             alt="Logo"
           />
         </div>
-
+        
         <div className="container">
           {/* Haciendo uso de bootstrap */}
           <div className="row">
@@ -76,6 +81,7 @@ class BadgeNew extends React.Component {
             </div>
 
             <div className="col-6">
+            <h1>New Attendant</h1>
               <BadgeForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}
