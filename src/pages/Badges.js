@@ -4,9 +4,10 @@ import "./styles/Badges.css";
 import confLogo from "../images/badge-header.svg";
 import BadgesList from "../components/BadgesList";
 import { Link } from "react-router-dom";
-import PageLoading from "../components/PageLoading"
-import PageError from "../components/PageError"
-import api from '../api'
+import PageLoading from "../components/PageLoading";
+import PageError from "../components/PageError";
+import api from "../api";
+import Miniloader from "../components/Miniloader";
 
 class Badges extends React.Component {
   state = {
@@ -15,30 +16,41 @@ class Badges extends React.Component {
     data: undefined,
   };
 
-  componentDidMount () {
-    this.fetchData()
+  componentDidMount() {
+    this.fetchData();
 
-    setInterval(this.fetchData, 5000) /* define un intervalo donde se ejecutarael primer argumento */
+    this.intervalId = setInterval(
+      this.fetchData,
+      5000
+    ); /* define un intervalo donde se ejecutarael primer argumento */
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
   }
 
   fetchData = async () => {
-    this.setState({loading: true, error: null}) /* Volvemos a declarar el loading true por si volvemos en el futuro a utilizar fetchData */
+    this.setState({
+      loading: true,
+      error: null,
+    }); /* Volvemos a declarar el loading true por si volvemos en el futuro a utilizar fetchData */
 
     try {
-      const data = await api.badges.list()
-      this.setState({ loading: false, data: data})
+      const data = await api.badges.list();
+      this.setState({ loading: false, data: data });
     } catch (error) {
-      this.setState({loading : false, error: error})
+      this.setState({ loading: false, error: error });
     }
-  }
+  };
 
-  render() { /* Como vemos hacemos un manejo por cada estado de la peticion */
-    if(this.state.loading === true) {
-      return <PageLoading />
+  render() {
+    /* Como vemos hacemos un manejo por cada estado de la peticion */
+    if (this.state.loading === true && !this.state.data) {
+      return <PageLoading />;
     }
 
     if (this.state.error) {
-      return <PageError error={this.state.error} />
+      return <PageError error={this.state.error} />;
     } /* Elegimos que hacer en caso de que ocurra un error */
 
     return (
@@ -62,6 +74,7 @@ class Badges extends React.Component {
         <div className="Badges__list">
           <div className="Badges__container">
             <BadgesList badges={this.state.data} />
+            {this.state.loading && <Miniloader />}
           </div>
         </div>
       </React.Fragment>

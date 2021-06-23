@@ -21,7 +21,7 @@ class BadgesList extends React.Component {
         {this.props.badges.map((badge) => {
           //La funcion map retornara un li por cada valor
           return (
-            <Link  key={badge.id} className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}> {/* La clase que le ponemos es de bootstrap y es para que no se vea azul, caracteristica de un hipervinculo */}
+            <Link  key={badge.id} className="text-reset text-decoration-none" to={`/badges/${badge.id}`}> {/* La clase que le ponemos es de bootstrap y es para que no se vea azul, caracteristica de un hipervinculo */}
               <li> {/* Todos los componentes React se les asigna un ID */}
                 {/* id porque asi es unico, si ponemos por ejemplo first name corremos el riesgo de que dos elementos se llamen iguales */}
                 <Gravatar email={badge.email} />
