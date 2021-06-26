@@ -54,7 +54,7 @@ function BadgeDetails(props) {
 
             <div>
               <button className="btn btn-danger">Delete</button>
-              <Modal />
+              <Modal isOpen={true}/>
             </div>
           </div>
         </div>
