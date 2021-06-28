@@ -21,7 +21,7 @@ class Badges extends React.Component {
 
     this.intervalId = setInterval(
       this.fetchData,
-      5000
+      10000
     ); /* define un intervalo donde se ejecutarael primer argumento */
   }
 
