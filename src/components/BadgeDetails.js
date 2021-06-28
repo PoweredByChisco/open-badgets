@@ -7,7 +7,21 @@ import ReactDOM from "react-dom";
 import DeleteBadgeModal from "./DeleteBadgeModal";
 import Modal from "./Modal";
 
+function useIncreaseCount(max) {
+  const [count, setCount] = React.useState(0);
+
+  if (count > max) {
+    setCount(0);
+  }
+
+  return [count, setCount];
+} /* Esto es un customHook el cual a su vez por dentro nos ayudamos de un Hook ya hecho */
+
 function BadgeDetails(props) {
+  const [count, setCount] =
+    useIncreaseCount(
+      4
+    ); /* Esto es el inicio del hook, la funcion recibe dos argumentos los cuales los guardaremos en un arreglo, este arreglo como vemos es muy similar a decir state, y setState */
   const badge = props.badge;
 
   return (
@@ -44,7 +58,16 @@ function BadgeDetails(props) {
             <h2>Actions</h2>
             <div>
               <div>
-                <button onClik={() => {}} className="btn btn-primary">Increase Count</button>
+                <button
+                  onClick={() => {
+                    setCount(
+                      count + 1
+                    ); /* De esta manera definimos y trabajamos con un hook */
+                  }}
+                  className="btn btn-primary mb-4"
+                >
+                  Increase Count: {count}
+                </button>
 
                 <Link
                   className="btn btn-primary mb-4"
