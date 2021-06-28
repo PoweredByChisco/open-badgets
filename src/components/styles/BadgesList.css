@@ -1,34 +1,19 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.BadgesList ul>li {
+  margin-bottom: 1rem;
 }
 
-ul li {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  background-color: white;
-  margin-bottom: 10px;
+.BadgesListItem {
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
   border-radius: 5px;
-  box-shadow: 5px;
-}
-
-ul li>img {
-  align-self: center;
-  margin: 0 auto;
-  width: 90%;
-  border-radius: 50%;
-}
-
-ul li div {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 15px;
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+  padding: 1rem;
 }
 
-ul li div p{ /* Tengo que aplicar esto porque a pesar de que se resetearon los estilos, desde node modules bootstrap esta heredando a este p por alguna razon */
-    margin-bottom: 2px;
+.BadgesListItem__avatar {
+  border-radius: 50%;
+  background: #a3a3a3;
+  margin-right: 0.5rem;
+  width: 80px;
+  height: 80px;
 }
