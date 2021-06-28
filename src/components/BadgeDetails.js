@@ -58,16 +58,6 @@ function BadgeDetails(props) {
             <h2>Actions</h2>
             <div>
               <div>
-                <button
-                  onClick={() => {
-                    setCount(
-                      count + 1
-                    ); /* De esta manera definimos y trabajamos con un hook */
-                  }}
-                  className="btn btn-primary mb-4"
-                >
-                  Increase Count: {count}
-                </button>
 
                 <Link
                   className="btn btn-primary mb-4"

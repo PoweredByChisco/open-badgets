@@ -3,7 +3,7 @@ import "./styles/BadgesList.css";
 import {Link} from "react-router-dom"
 import Gravatar from "./Gravatar"
 
-class BadgesList extends React.Component {
+function BadgesList (props) {
   render() {
     if (this.props.badges.length === 0) { /* Manejamos el error 404 not found */
       return(
