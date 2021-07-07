@@ -5,7 +5,6 @@ import confLogo from "../images/platziconf-logo.svg";
 import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
 import api from "../api";
-import Badge from "../components/Badge";
 import { Link } from "react-router-dom";
 import BadgeDetails from "../components/BadgeDetails";
 
