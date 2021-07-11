@@ -13,6 +13,11 @@
   justify-content: center;
 }
 
+.buttons-container {
+  max-width: 300px;
+  margin: 0;
+}
+
 .BadgeDetails__buttons {
   display: flex;
   justify-content: flex-end;

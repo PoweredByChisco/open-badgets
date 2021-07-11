@@ -12,7 +12,7 @@ class BadgeForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <form onSubmit={this.props.onSubmit} action="">
           <div className="form-group">
             {" "}
@@ -75,9 +75,11 @@ class BadgeForm extends React.Component {
             Save
           </button>
 
-          {this.props.error && <p className="text-danger">{this.props.error.message}</p>}
+          {this.props.error && (
+            <p className="text-danger">{this.props.error.message}</p>
+          )}
         </form>
-      </div>
+      </React.Fragment>
     );
   }
 }

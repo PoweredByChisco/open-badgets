@@ -12,11 +12,18 @@
   align-items: center;
 }
 
+.Badge__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 580px;
+}
+
 .Badges__list {
   width: 100%;
   max-width: 580px;
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .Badges_conf-logo {
@@ -24,7 +31,6 @@
 }
 
 .Badges__buttons {
-  display: flex;
-  justify-content: flex-end;
+  align-self: flex-end;
   margin-bottom: 1rem;
 }

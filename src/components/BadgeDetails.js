@@ -56,28 +56,35 @@ function BadgeDetails(props) {
           </div>
           <div className="col">
             <h2>Actions</h2>
-            <div>
-              <div>
-
-                <Link
-                  className="btn btn-primary mb-4"
-                  to={`/badges/${badge.id}/edit`}
-                >
-                  Edit
-                </Link>
+            <div className="container buttons-container">
+              <div className="row">
+                <div className="col">
+                  <div>
+                    <Link
+                      className="btn btn-primary mb-4"
+                      to={`/badges/${badge.id}/edit`}
+                    >
+                      Edit
+                    </Link>
+                  </div>
+                </div>
+                <div className="col">
+                  <div>
+                    <button
+                      onClick={props.onOpenModal}
+                      className="btn btn-danger"
+                    >
+                      Delete
+                    </button>
+                    <DeleteBadgeModal
+                      isOpen={props.modalIsOpen}
+                      onClose={props.onCloseModal}
+                      onDeleteBadge={props.onDeleteBadge}
+                    />{" "}
+                    {/* onClose lo manejamos asi porque recordemos que este le pertenece al contenedor ya que este componente es una funcion el cual solo presenta informacion y no hace manejo de estado */}
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div>
-              <button onClick={props.onOpenModal} className="btn btn-danger">
-                Delete
-              </button>
-              <DeleteBadgeModal
-                isOpen={props.modalIsOpen}
-                onClose={props.onCloseModal}
-                onDeleteBadge={props.onDeleteBadge}
-              />{" "}
-              {/* onClose lo manejamos asi porque recordemos que este le pertenece al contenedor ya que este componente es una funcion el cual solo presenta informacion y no hace manejo de estado */}
             </div>
           </div>
         </div>

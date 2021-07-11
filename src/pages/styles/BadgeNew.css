@@ -9,6 +9,11 @@
   justify-content: center;
 }
 
-.BadgeNew__hero-image{
+.BadgeNew__hero-image {
   max-height: 100px;
+}
+
+.form-container {
+  margin: 0 auto;
+  min-width: 280px;
 }
