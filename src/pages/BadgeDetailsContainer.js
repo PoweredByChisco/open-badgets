@@ -1,11 +1,8 @@
 import React from "react";
-
 import "./styles/BadgeDetails.css";
-import confLogo from "../images/platziconf-logo.svg";
 import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
 import api from "../api";
-import { Link } from "react-router-dom";
 import BadgeDetails from "../components/BadgeDetails";
 
 class BadgeDetailsContainer extends React.Component {
