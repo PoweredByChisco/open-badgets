@@ -1,13 +1,12 @@
 import React from "react";
-
 import "./styles/Badges.css";
-import confLogo from "../images/badge-header.svg";
 import BadgesList from "../components/BadgesList";
 import { Link } from "react-router-dom";
 import PageLoading from "../components/PageLoading";
 import PageError from "../components/PageError";
 import api from "../api";
 import Miniloader from "../components/Miniloader";
+import BadgeHero from "../components/BadgeHero";
 
 class Badges extends React.Component {
   state = {
@@ -55,13 +54,9 @@ class Badges extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="Badges">
-          <div className="Badges__hero">
-            <div className="Badges__container">
-              <img src={confLogo} alt="" className="Badges_conf-logo" />
-            </div>
-          </div>
-        </div>
+        <BadgeHero>
+            <h1 className="Badges-title">Speakers</h1>
+        </BadgeHero>
 
         <div className="Badge__container">
           <div className="Badges__buttons">

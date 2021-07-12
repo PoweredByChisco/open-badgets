@@ -10,7 +10,21 @@
 .Badge__header {
   padding: 0.5rem 0;
   height: 80px;
-  background: #1B1B25;
+  background-image: linear-gradient(
+    to right,
+    #370091,
+    #5202a6,
+    #6d03ba,
+    #8904ce,
+    #a504e2,
+    #a504e2,
+    #a504e2,
+    #a504e2,
+    #8904ce,
+    #6d03ba,
+    #5202a6,
+    #370091
+  );
   display: flex;
   justify-content: center;
 }

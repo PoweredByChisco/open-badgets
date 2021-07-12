@@ -1,4 +1,5 @@
 import React from "react";
+import "./styles/BadgeForm.css"
 
 class BadgeForm extends React.Component {
   handleClick = (e) => {
@@ -71,7 +72,7 @@ class BadgeForm extends React.Component {
             />
           </div>
 
-          <button onClick={this.handleClick} className="btn btn-primary">
+          <button onClick={this.handleClick} className="btn btn-primary mb-10">
             Save
           </button>
 

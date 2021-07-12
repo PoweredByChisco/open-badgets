@@ -5,6 +5,7 @@ import BadgeForm from "../components/BadgeForm";
 import Badge from "../components/Badge";
 import api from "../api";
 import PageLoading from "../components/PageLoading";
+import BadgeHero from "../components/BadgeHero";
 
 class BadgeNew extends React.Component {
   state = {
@@ -51,13 +52,13 @@ class BadgeNew extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="BadgeNew__hero">
+        <BadgeHero>
           <img
             className="BadgeNew__hero-image img-fluid"
             src={header}
             alt="Logo"
           />
-        </div>
+        </BadgeHero>
 
         <div className="container">
           {/* Haciendo uso de bootstrap */}
