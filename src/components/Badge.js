@@ -1,5 +1,5 @@
 import React from "react";
-import confLogo from "../images/badge-header.svg";
+import confLogo from "../images/conf-logo.png";
 //Esto de guardar la direccion en un importado es algo que hace webpack y react automaticamente, para despues mandarlo a llamar entre llaves donde se necesite. Apunte aqui: ya que si consultamos el codigo con nuestra extension react en chrome primero; veremos que se genera un html completo (porque eso es un componente, es como toda una pagina html completa dentro de la aplicacion react) y segundo veremos que nuestra direccion a donde se refiere la imagen directamente ya aparece con la direccion designada, solo que con otra extension, esto lo hace react automaticamente para optimizar nuestros importados
 import "./styles/Badge.css";
 //De esto tambien se encarga webpack, sabe de entrada como instalarlo en nuestra app

@@ -1,14 +1,15 @@
 import React from "react";
 import "./styles/BadgeEdit.css";
-import header from "../images/platziconf-logo.svg";
+import header from "../images/conf-logo.png";
 import BadgeForm from "../components/BadgeForm";
 import Badge from "../components/Badge";
 import api from "../api";
 import PageLoading from "../components/PageLoading";
+import BadgeHero from "../components/BadgeHero";
 
 class BadgeEdit extends React.Component {
   state = {
-    loading: true, /* Cuando empezamos con una peticion ponemos que es cierto */
+    loading: true /* Cuando empezamos con una peticion ponemos que es cierto */,
     error: null,
     form: {
       firstName: "",
@@ -19,22 +20,23 @@ class BadgeEdit extends React.Component {
     },
   };
 
-    componentDidMount () {
-    this.fetchData()
+  componentDidMount() {
+    this.fetchData();
   }
 
   fetchData = async () => {
-    this.setState({loading: true, error: null}) 
+    this.setState({ loading: true, error: null });
 
     try {
       const data = await api.badges.read(
-        this.props.match.params.badgeId /* Es un metodo que el router le pasa a todos los componentes react el cual sirve para leer un parametro de nuestra ruta */
-      ) 
-      this.setState({ loading: false, form: data})
+        this.props.match.params
+          .badgeId /* Es un metodo que el router le pasa a todos los componentes react el cual sirve para leer un parametro de nuestra ruta */
+      );
+      this.setState({ loading: false, form: data });
     } catch (error) {
-      this.setState({loading : false, error: error})
+      this.setState({ loading: false, error: error });
     }
-  }
+  };
 
   handleChange = (e) => {
     this.setState({
@@ -68,13 +70,13 @@ class BadgeEdit extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="BadgeEdit__hero">
+        <BadgeHero>
           <img
             className="BadgeEdit__hero-image img-fluid"
             src={header}
             alt="Logo"
           />
-        </div>
+        </BadgeHero>
 
         <div className="container">
           <div className="row">
@@ -90,7 +92,7 @@ class BadgeEdit extends React.Component {
             </div>
 
             <div className="col">
-            <h1>Edit Attendant</h1>
+              <h1>Edit Attendant</h1>
               <BadgeForm
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}

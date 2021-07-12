@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/BadgeNew.css";
-import header from "../images/platziconf-logo.svg";
+import header from "../images/conf-logo.png";
 import BadgeForm from "../components/BadgeForm";
 import Badge from "../components/Badge";
 import api from "../api";

@@ -1,11 +1,8 @@
 import React from "react";
-
 import Badge from "./Badge";
-import confLogo from "../images/platziconf-logo.svg";
 import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
 import DeleteBadgeModal from "./DeleteBadgeModal";
-import Modal from "./Modal";
+import BadgeHero from "./BadgeHero";
 
 function useIncreaseCount(max) {
   const [count, setCount] = React.useState(0);
@@ -26,20 +23,17 @@ function BadgeDetails(props) {
 
   return (
     <React.Fragment>
-      <div className="BadgeDetails__hero">
-        <div className="container">
+      <BadgeHero>
+        <div className="container BadgeHero">
           <div className="row">
-            <div className="col-6">
-              <img src={confLogo} alt="Logo de la conferencia" />
-            </div>
-            <div className="col-6 BadgeDetails__hero-attendant-name">
+            <div className="col">
               <h1>
                 {badge.firstName} {badge.lastName}
               </h1>
             </div>
           </div>
         </div>
-      </div>
+      </BadgeHero>
 
       <div className="container">
         {" "}
