@@ -1,10 +1,11 @@
-.PageError {
+.notFound {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   width: 100%;
+  height: 100vh;
+  position: fixed;
   background-image: linear-gradient(
     to right bottom,
     #370091,
@@ -13,5 +14,5 @@
     #8904ce,
     #a504e2
   );
-  
+  color: white;
 }
