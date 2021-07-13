@@ -46,7 +46,19 @@ class Badges extends React.Component {
   render() {
     /* Como vemos hacemos un manejo por cada estado de la peticion */
     if (this.state.loading === true && !this.state.data) {
-      return <Skeleton height={163}/>
+      return (
+        <React.Fragment>
+          <Skeleton height={163} />;
+          <div className="Badge__container">
+            <div className="Badges__buttons">
+              <Skeleton width={145} height={54}/>
+            </div>
+            {new Array(5).fill(1).map((_, i) => {
+              return <Skeleton width={548} height={112}/>;
+            })}
+          </div>
+        </React.Fragment>
+      );
     }
 
     if (this.state.error) {
@@ -56,7 +68,7 @@ class Badges extends React.Component {
     return (
       <React.Fragment>
         <BadgeHero>
-            <h1 className="Badges-title">Speakers</h1>
+          <h1 className="Badges-title">Speakers</h1>
         </BadgeHero>
 
         <div className="Badge__container">
@@ -67,7 +79,10 @@ class Badges extends React.Component {
           </div>
           <div className="Badges__list">
             <div className="Badges__container">
-              <BadgesList badges={this.state.data} isLoading={this.state.loading}/>
+              <BadgesList
+                badges={this.state.data}
+                isLoading={this.state.loading}
+              />
               {this.state.loading && <Miniloader />}
             </div>
           </div>

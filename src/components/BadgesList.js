@@ -89,7 +89,6 @@ function BadgesList(props) {
           }}
         />
       </div>
-      {props.isLoading && new Array(10).fill(1).map((_, i) => {return <Skeleton />;})}
       {/* Nuestro recuadro de busqueda */}
       <ul className="list-unstyled">
         {filteredBadges.map((badge) => {
