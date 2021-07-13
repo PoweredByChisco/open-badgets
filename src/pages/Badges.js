@@ -7,6 +7,7 @@ import PageError from "../components/PageError";
 import api from "../api";
 import Miniloader from "../components/Miniloader";
 import BadgeHero from "../components/BadgeHero";
+import Skeleton from "react-loading-skeleton";
 
 class Badges extends React.Component {
   state = {
@@ -45,7 +46,7 @@ class Badges extends React.Component {
   render() {
     /* Como vemos hacemos un manejo por cada estado de la peticion */
     if (this.state.loading === true && !this.state.data) {
-      return <PageLoading />;
+      return <Skeleton height={163}/>
     }
 
     if (this.state.error) {
@@ -66,7 +67,7 @@ class Badges extends React.Component {
           </div>
           <div className="Badges__list">
             <div className="Badges__container">
-              <BadgesList badges={this.state.data} />
+              <BadgesList badges={this.state.data} isLoading={this.state.loading}/>
               {this.state.loading && <Miniloader />}
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import Skeleton from "react-loading-skeleton";
 import "./styles/BadgesList.css";
 import Gravatar from "./Gravatar";
 
@@ -28,7 +28,10 @@ class BadgesListItem extends React.Component {
 
 function useSearchBadges(badges) {
   const [query, setQuery] = React.useState("");
-  const [filteredBadges, setFilteredBadges] = React.useState(badges);/* Cuando le damos un parametro al hook usestate defines cual sera su valor inicial */
+  const [filteredBadges, setFilteredBadges] =
+    React.useState(
+      badges
+    ); /* Cuando le damos un parametro al hook usestate defines cual sera su valor inicial */
 
   React.useMemo(() => {
     /* useMemo es otro hook el cual recibe una funcion y unos parametros, la primera vez que reciba los argumentos ejecuta la funcion y retorna, pero cuando recibe los mismos argumentos otra vez no ejecuta la funcion y retorna directamente los resultados de su cache */
@@ -86,6 +89,7 @@ function BadgesList(props) {
           }}
         />
       </div>
+      {props.isLoading && new Array(10).fill(1).map((_, i) => {return <Skeleton />;})}
       {/* Nuestro recuadro de busqueda */}
       <ul className="list-unstyled">
         {filteredBadges.map((badge) => {
