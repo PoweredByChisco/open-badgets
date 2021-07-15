@@ -17,7 +17,7 @@ function App() {
         {/* Layout es un componente que renderizara lo mismo en todas las paginas */}
         <Switch>
           {/* Similar al Switch de programacion, hace que solo eligamos una ruta, en las rutas importa el orden */}
-          <Route exact path="/home" component={Home} />
+          <Route exact path="" component={Home} />
           <Route exact path="/badges" component={Badges} />{" "}
           {/* Seran nuestros directorios, tiene exact path porque de otra manera el switch se confundira y abrira otra ruta ya que badges y badges/new coinciden al inicio */}
           <Route exact path="/badges/new" component={BadgeNew} />
